@@ -2,44 +2,51 @@
 import HackclubBadge from "./HackclubBadge.astro";
 
 const btnTWStyle: string =
-  "py-2 px-4 text-[1.2em] rounded-full hover:scale-105 transition duration-300 ease-in-out";
+  "py-2 px-4 text-[1.2em] bg-gradient-to-br hover:bg-gradient-to-bl rounded-full hover:scale-105 transition duration-500 ease-in-out";
 ---
 
 <div class="home-container">
   <HackclubBadge />
   <!-- This image is hosted on Hack Club's CDN -->
   <img
-    class="mb-[2.0em] w-[12em]"
+    class="mb-[2.0em] w-[12em] block mx-auto mt-35"
     src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/921bf78caaebfa33c59a40744e839781bc53ea4c_hckl.svg"
     alt=""
   />
-  <h1 class="text-[1.2rem] font-bold">Rooted in Kerala, Reaching the World</h1>
-  <h1 class="text-[3rem] mt-0 font-bold text-[#2C3F50]">Kerala Hack Club</h1>
-  <p class="text-center text-[1.2rem] sm:text-[1.4rem]">
-    We're building something amazing for the <br />hacker community in Kerala. <br
-    />Join the WhatsApp Community Now!
+  <h1 class="text-[1.2rem] font-bold text-left">Rooted in Kerala, Reaching the World</h1>
+  <h1 class="text-[3.5rem] mt-0 font-bold text-[#2C3F50] text-left">Kerala Hack Club</h1>
+  <p class="text-left text-[1.2rem] sm:text-[1.4rem]">
+    We're building something incredible for Kerala's hacker community.
+<br>Join our WhatsApp group and be part of it!
+
+
   </p>
-  <div class="flex gap-4 mt-[2em]">
-    <a
-      class={btnTWStyle + " bg-[rgba(17,140,126)] text-white"}
-      href="https://chat.whatsapp.com/LWqISu3hrOEIayO2vM4by2">WhatsApp</a
-    >
-    <a
-      class={btnTWStyle + " bg-[rgba(166,51,214)] text-white"}
-      href="https://github.com/kerala-hackclub">GitHub</a
-    >
-  </div>
+<div class="flex gap-4 mt-[2em]">
+  <a
+    class={`${btnTWStyle} text-white from-blue-500 to-teal-500 `}
+    href="https://chat.whatsapp.com/LWqISu3hrOEIayO2vM4by2"
+  >
+    WhatsApp
+  </a>
+  <a
+    class={`${btnTWStyle} text-white from-orange-500 to-red-500`}
+    href="https://github.com/kerala-hackclub"
+  >
+    GitHub
+  </a>
+</div>
+
 </div>
 
 <style>
   .home-container {
     height: 97vh;
-    width: 98.5vw;
+    width: 60vw;
     border-radius: 2em;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: top;
+    /* align-items: center; */
     font-family: "Phantom Sans";
     background:
       radial-gradient(
