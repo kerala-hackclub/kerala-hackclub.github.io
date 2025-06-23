@@ -1,0 +1,79 @@
+---
+import HackclubBadge from "./HackclubBadge.astro";
+
+const btnTWStyle: string =
+  "py-2 px-4 text-[1.2em] rounded-full hover:scale-105 transition duration-300 ease-in-out";
+---
+
+<div class="home-container">
+  <HackclubBadge />
+  <!-- This image is hosted on Hack Club's CDN -->
+  <img
+    class="mb-[2.5em] w-[12em]"
+    src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/921bf78caaebfa33c59a40744e839781bc53ea4c_hckl.svg"
+    alt=""
+  />
+  <h1 class="text-[2.5rem] font-bold text-[#2C3F50]">Kerala Hack Club</h1>
+  <h1 class="text-[1.5rem] font-bold mb-[1em] mt-[0.1em]">
+    Build for the world, from Kerala
+  </h1>
+  <p class="text-center text-[1.2rem] sm:text-[1.4rem]">
+    We're building something amazing for the <br />hacker community in Kerala. <br
+    />Join the WhatsApp Community Now!
+  </p>
+  <div class="flex gap-4 mt-[2em]">
+    <a
+      class={btnTWStyle + " bg-[rgba(17,140,126)] text-white"}
+      href="https://chat.whatsapp.com/LWqISu3hrOEIayO2vM4by2">WhatsApp</a
+    >
+    <a
+      class={btnTWStyle + " bg-[rgba(166,51,214)] text-white"}
+      href="https://github.com/kerala-hackclub">GitHub</a
+    >
+  </div>
+</div>
+
+<style>
+  .home-container {
+    height: 94vh;
+    width: calc(100vw - 6vh);
+    border-radius: 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "Phantom Sans";
+    background:
+      radial-gradient(
+        circle at 25% 25%,
+        rgba(255, 182, 193, 0.15) 0%,
+        transparent 50%
+      ),
+      radial-gradient(
+        circle at 75% 30%,
+        rgba(255, 182, 193, 0.1) 0%,
+        transparent 45%
+      ),
+      radial-gradient(
+        circle at 50% 70%,
+        rgba(255, 182, 193, 0.2) 0%,
+        transparent 40%
+      ),
+      white;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+  }
+
+  @media (max-width: 600px) {
+    .home-container {
+      height: 98svh;
+      width: calc(100svw - 2svh);
+      border-radius: 2em;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-family: "Phantom Sans";
+    }
+  }
+</style>
