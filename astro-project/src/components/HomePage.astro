@@ -1,27 +1,47 @@
 ---
-import HackclubBadge from './HackclubBadge.astro';
+import HackclubBadge from "./HackclubBadge.astro";
 ---
 
 <div class="home-container">
   <HackclubBadge />
-  <h1>Kerala Hack Club</h1>
-  <h1>Build for the world, from Kerala</h1>
-  <p class="description">We're building something amazing for the hacker community in Kerala. <br>Join the WhatsApp Community Now!</p>
-  <a href="https://chat.whatsapp.com/LWqISu3hrOEIayO2vM4by2">WhatsApp</a>
-  <a href="https://github.com/kerala-hackclub">GitHub</a>
+  <h1 class="text-[2.5rem] font-bold text-[#2C3F50]">Kerala Hack Club</h1>
+  <h1 class="text-[1.5rem] font-bold mb-[1em] mt-[0.1em]">
+    Build for the world, from Kerala
+  </h1>
+  <p class="text-center text-[1.4rem]">
+    We're building something amazing for the <br />hacker community in Kerala. <br
+    />Join the WhatsApp Community Now!
+  </p>
+  <div class="flex gap-4">
+    <a href="https://chat.whatsapp.com/LWqISu3hrOEIayO2vM4by2">WhatsApp</a>
+    <a href="https://github.com/kerala-hackclub">GitHub</a>
+  </div>
 </div>
 
 <style>
   .home-container {
-    height: 100vh;
+    height: 94vh;
+    width: calc(100vw - 6vh);
+    border-radius: 2em;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-family: 'Phantom Sans';
+    font-family: "Phantom Sans";
+    background-color: #f5f5f5;
   }
 
-  .description {
-    text-align: center;
+  @media (max-width: 600px) {
+    .home-container {
+      height: 98vh;
+      width: calc(100vw - 2vh);
+      border-radius: 2em;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-family: "Phantom Sans";
+      background-color: #f5f5f5;
+    }
   }
 </style>
