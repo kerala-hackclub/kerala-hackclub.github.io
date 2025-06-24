@@ -3,6 +3,9 @@ import HackclubBadge from "./HackclubBadge.astro";
 
 const btnTWStyle: string =
   "py-2 px-4 text-[1.2em] bg-gradient-to-br hover:bg-gradient-to-bl rounded-full hover:scale-105 transition duration-500 ease-in-out";
+const paragraphTWStyle: string =
+  "text-[1.2rem] sm:text-[1.4rem] text-[#292e32] text-center max-w-[600px]";
+
 ---
 
 <div class="home-container">
@@ -13,14 +16,12 @@ const btnTWStyle: string =
     src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/921bf78caaebfa33c59a40744e839781bc53ea4c_hckl.svg"
     alt=""
   />
-  <h1 class="text-[1.2rem] font-bold text-[#292e32] text-left">Rooted in Kerala, Reaching the World</h1>
-  <h1 class="text-[3rem] sm:text-[3.5rem] mt-0 font-bold text-[#253542] text-left">Kerala Hack Club</h1>
-  <p class="text-[1.2rem] sm:text-[1.4rem] text-left ">
-    We're building something incredible for Kerala's hacker community.
-<br>Join our WhatsApp group and be part of it!
-
-
+  <h1 class="text-[1.2rem] font-bold text-[#292e32]">Rooted in Kerala, Reaching the World</h1>
+  <h1 class="text-[3rem] sm:text-[3.5rem] mt-0 font-bold text-[#253542] ">Kerala Hack Club</h1>
+  <p class={`${paragraphTWStyle}`}>
+    We're building something for Kerala's hacker community.
   </p>
+  <p class={`${paragraphTWStyle}`} >Join our WhatsApp group and be part of it!</p>
 <div class="flex gap-4 mt-[2em]">
   <a
     class={`${btnTWStyle} text-white from-blue-500 to-teal-500 `}
@@ -41,12 +42,12 @@ const btnTWStyle: string =
 <style>
   .home-container {
     height: 97vh;
-    width: 60vw;
+    width: 97vw;
     border-radius: 2em;
     display: flex;
     flex-direction: column;
     justify-content: top;
-    /* align-items: center; */
+    align-items: center;
     font-family: "Phantom Sans";
     background:
       radial-gradient(
@@ -77,7 +78,7 @@ const btnTWStyle: string =
       display: flex;
       flex-direction: column;
       justify-content: top;
-      /* align-items: center; */
+      align-items: center;
       font-family: "Phantom Sans";
     }
   }
