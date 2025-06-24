@@ -2,9 +2,9 @@
 import HackclubBadge from "./HackclubBadge.astro";
 
 const btnTWStyle: string =
-  "py-2 px-4  font-bold text-[1.3em] bg-gradient-to-br hover:bg-gradient-to-bl rounded-full hover:scale-105 transition duration-500 ease-in-out";
+  "py-2 px-4  font-bold text-[0.8em] sm:text-[1.4em] bg-gradient-to-br hover:bg-gradient-to-bl rounded-full hover:scale-105 transition duration-500 ease-in-out";
 const paragraphTWStyle: string =
-  "text-[1.2rem] sm:text-[1.4rem] text-[#292e32] text-center max-w-[600px]";
+  "text-[0.8rem] sm:text-[1.4rem] text-[#292e32] text-center max-w-[600px]";
 
 ---
 
@@ -12,16 +12,16 @@ const paragraphTWStyle: string =
   <HackclubBadge />
   <!-- This image is hosted on Hack Club's CDN -->
   <img
-    class="mb-[2.0em] w-[12em] block mx-auto"
+    class="mb-[2.0em] w-[7em] sm:w-[12em] block mx-auto"
     src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/921bf78caaebfa33c59a40744e839781bc53ea4c_hckl.svg"
     alt=""
   />
-  <h1 class="text-[1.2rem] font-bold text-[#292e32]">Rooted in Kerala, Reaching the World</h1>
-  <h1 class="text-[3rem] sm:text-[3.5rem] mt-0 font-bold text-[#253542] ">Kerala Hack Club</h1>
+  <h1 class="text-[0.68rem] sm:text-[1.2rem] font-bold text-[#292e32]">Rooted in Kerala, Reaching the World</h1>
+  <h1 class="text-[2.0rem] sm:text-[3.5rem] mt-0 font-bold text-[#253542] ">Kerala Hack Club</h1>
   <p class={`${paragraphTWStyle}`}>
-    We're building something for Kerala's hacker community.
+    We're building something Incredible for <br> Kerala's hacker community.
   </p>
-  <p class={`${paragraphTWStyle}`} >Join our WhatsApp group and be part of it!</p>
+  <p class={`${paragraphTWStyle} mt-[0.4rem]`} >Join our WhatsApp group to take part!</p>
 <div class="flex gap-4 mt-[2em]">
   <a
     class={`${btnTWStyle} text-white from-blue-500 to-teal-500 `}
@@ -41,8 +41,8 @@ const paragraphTWStyle: string =
 
 <style>
   .home-container {
-    height: 97vh;
-    width: 97vw;
+    height: calc(100vh - 3vh);
+    width: calc(100vw - 2vw);
     border-radius: 2em;
     display: flex;
     flex-direction: column;
@@ -72,8 +72,8 @@ const paragraphTWStyle: string =
 
   @media (max-width: 600px) {
     .home-container {
-      height: 98svh;
-      width: 98svw;
+      height: calc(100vh - 3vh);
+      width: calc(100vw - 3vw);
       border-radius: 2em;
       display: flex;
       flex-direction: column;
