@@ -2,7 +2,7 @@
 import HackclubBadge from "./HackclubBadge.astro";
 
 const btnTWStyle: string =
-  "py-2 px-4 text-[1.2em] bg-gradient-to-br hover:bg-gradient-to-bl rounded-full hover:scale-105 transition duration-500 ease-in-out";
+  "py-2 px-4  font-bold text-[1.3em] bg-gradient-to-br hover:bg-gradient-to-bl rounded-full hover:scale-105 transition duration-500 ease-in-out";
 const paragraphTWStyle: string =
   "text-[1.2rem] sm:text-[1.4rem] text-[#292e32] text-center max-w-[600px]";
 
@@ -12,7 +12,7 @@ const paragraphTWStyle: string =
   <HackclubBadge />
   <!-- This image is hosted on Hack Club's CDN -->
   <img
-    class="mb-[2.0em] w-[12em] block mx-auto mt-35"
+    class="mb-[2.0em] w-[12em] block mx-auto"
     src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/921bf78caaebfa33c59a40744e839781bc53ea4c_hckl.svg"
     alt=""
   />
@@ -27,13 +27,13 @@ const paragraphTWStyle: string =
     class={`${btnTWStyle} text-white from-blue-500 to-teal-500 `}
     href="https://chat.whatsapp.com/LWqISu3hrOEIayO2vM4by2"
   >
-    WhatsApp
+    Whatsapp
   </a>
   <a
     class={`${btnTWStyle} text-white from-orange-500 to-red-500`}
     href="https://github.com/kerala-hackclub"
   >
-    GitHub
+    Github
   </a>
 </div>
 
@@ -46,7 +46,7 @@ const paragraphTWStyle: string =
     border-radius: 2em;
     display: flex;
     flex-direction: column;
-    justify-content: top;
+    justify-content: center;
     align-items: center;
     font-family: "Phantom Sans";
     background:
@@ -73,7 +73,7 @@ const paragraphTWStyle: string =
   @media (max-width: 600px) {
     .home-container {
       height: 98svh;
-      width: 50svh;
+      width: 98svw;
       border-radius: 2em;
       display: flex;
       flex-direction: column;
