@@ -5,10 +5,9 @@ const btnTWStyle: string =
   "py-2 px-5 text-[1.3em] md:text-[1.4em] bg-gradient-to-br rounded-full hover:scale-105 transition duration-500 ease-in-out";
 const paragraphTWStyle: string =
   "text-[1.2rem] md:text-[1.5rem] text-[#292e32] text-center mt-5";
-
 ---
 
-<div class="home-container">
+<div class="home-container bg-linear-to-t from-[#C7EEFD] to-[white]">
   <HackclubBadge />
   <!-- This image is hosted on Hack Club's CDN -->
   <img
@@ -16,27 +15,57 @@ const paragraphTWStyle: string =
     src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/921bf78caaebfa33c59a40744e839781bc53ea4c_hckl.svg"
     alt=""
   />
-  <h1 class="text-[1.1rem] md:text-[1.2rem] font-bold text-[#292e32]">Rooted in Kerala, Reaching the World</h1>
-  <h1 class="text-[2.7rem] md:text-[3.5rem] font-bold text-[#253542] ">Kerala Hack Club</h1>
+  <h1 class="text-[1.1rem] md:text-[1.2rem] font-bold text-[#292e32]">
+    Rooted in Kerala, Reaching the World
+  </h1>
+  <h1 class="text-[2.7rem] md:text-[3.5rem] font-bold text-[#253542]">
+    Kerala Hack Club
+  </h1>
   <p class={`${paragraphTWStyle}`}>
-    We're building something Incredible for <br> Kerala's hacker community.
+    We're building something Incredible for <br /> Kerala's hacker community.
   </p>
-  <p class={`${paragraphTWStyle} mt-[0.4rem]`} >Join our WhatsApp Community to take part!</p>
-<div class="flex gap-4 mt-[2.6em]">
-  <a
-    class={`${btnTWStyle} text-white from-blue-500 to-teal-500 `}
-    href="https://chat.whatsapp.com/LWqISu3hrOEIayO2vM4by2"
+  <p class={`${paragraphTWStyle} mt-[0.4rem]`}>
+    Join our WhatsApp Community to take part!
+  </p>
+  <div class="flex gap-4 mt-[2.6em]">
+    <a
+      class={`${btnTWStyle} text-white from-blue-500 to-teal-500 `}
+      href="https://chat.whatsapp.com/LWqISu3hrOEIayO2vM4by2"
+    >
+      Whatsapp
+    </a>
+    <a
+      class={`${btnTWStyle} text-white from-orange-500 to-red-500`}
+      href="https://github.com/kerala-hackclub"
+    >
+      Github
+    </a>
+  </div>
+  <div
+    class="bg-[#C7ECFC] flex-col relative w-fit h-fit py-5 mt-20 border-1 border-[#3F709A] shadow-xl rounded-[2em] flex justify-center items-right"
   >
-    Whatsapp
-  </a>
-  <a
-    class={`${btnTWStyle} text-white from-orange-500 to-red-500`}
-    href="https://github.com/kerala-hackclub"
-  >
-    Github
-  </a>
-</div>
-
+    <div class="absolute top-[-2.8em] right-0">
+      <img
+        class="w-50"
+        src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/84183246563f40fca96af0607813609d862cb7a7_flag-plane.png"
+        alt="the plane"
+      />
+    </div>
+    <img
+      class="w-80 mx-8"
+      src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/6be270ddfe59fb66f31a7b5f7fa8311edfc16d28_daydream.png"
+      alt="daydream logo"
+    />
+    <p class="text-xl mx-8 mt-1">
+      Game jam for high schoolers <br />
+      Organized by Teenagers in Kerala <br />
+    </p>
+    <a
+      href="https://daydream.hackclub.com/kerala"
+      class="cursor-pointer w-fit mr-5 self-end bg-linear-to-b from-[#90c2e8] text-white hover:scale-110 active:scale-100 transition-all duration-200 to-[#74B9ED] px-4 py-1 rounded-full text-xl mt-3"
+      >Learn More?</a
+    >
+  </div>
 </div>
 
 <style>
@@ -49,23 +78,25 @@ const paragraphTWStyle: string =
     justify-content: center;
     align-items: center;
     font-family: "Phantom Sans";
-    background:
-      radial-gradient(
-        circle at 25% 25%,
-        rgba(255, 182, 193, 0.15) 0%,
-        transparent 50%
-      ),
-      radial-gradient(
-        circle at 75% 30%,
-        rgba(255, 182, 193, 0.1) 0%,
-        transparent 45%
-      ),
-      radial-gradient(
-        circle at 50% 70%,
-        rgba(255, 182, 193, 0.2) 0%,
-        transparent 40%
-      ),
-      white;
+    /* for giving the site a theme for the daydream hackathon */
+    /* added a tailwind tag to change the background */
+    /* background: */
+    /*   radial-gradient( */
+    /*     circle at 25% 25%, */
+    /*     rgba(255, 182, 193, 0.15) 0%, */
+    /*     transparent 50% */
+    /*   ), */
+    /*   radial-gradient( */
+    /*     circle at 75% 30%, */
+    /*     rgba(255, 182, 193, 0.1) 0%, */
+    /*     transparent 45% */
+    /*   ), */
+    /*   radial-gradient( */
+    /*     circle at 50% 70%, */
+    /*     rgba(255, 182, 193, 0.2) 0%, */
+    /*     transparent 40% */
+    /*   ), */
+    /*   white; */
     background-attachment: fixed;
     background-size: 100% 100%;
   }
