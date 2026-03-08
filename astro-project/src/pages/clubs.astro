@@ -1,0 +1,88 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+const clubs = [
+  {
+    name: 'Hack Club Kochi',
+    location: 'Kochi, Kerala',
+    description: 'A growing community of makers in the heart of Kochi. We host weekly build sessions.',
+    socials: 'https://hackclub.com/clubs/',
+    image: 'https://assets.hackclub.com/cards/hack-club-bank.png',
+  },
+  {
+    name: 'Trivandrum Makers',
+    location: 'Trivandrum, Kerala',
+    description: 'The first hack club in the capital. Shipping cool projects every week.',
+    socials: 'https://hackclub.com/clubs/',
+    image: 'https://assets.hackclub.com/cards/hack-club-bank.png',
+  },
+  {
+    name: 'Calicut Hackers',
+    location: 'Calicut, Kerala',
+    description: 'A vibrant community of high schoolers exploring technology and creativity.',
+    socials: 'https://hackclub.com/clubs/',
+    image: 'https://assets.hackclub.com/cards/hack-club-bank.png',
+  }
+];
+---
+
+<Layout title="Active Clubs" description="View all active Hack Clubs in Kerala.">
+  <Navbar />
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+    <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+      <div class="max-w-2xl">
+        <h1 class="text-5xl font-bold text-slate-900 mb-6">Active Clubs</h1>
+        <p class="text-xl text-slate-600">
+          Discover the vibrant hack clubs across Kerala. Each club is led by high schoolers, 
+          for high schoolers. Find one near you or start your own!
+        </p>
+      </div>
+      <a 
+        href="https://apply.hackclub.com/" 
+        target="_blank"
+        class="inline-flex items-center justify-center px-8 py-4 bg-[#ec3750] text-white rounded-full font-bold text-lg hover:bg-[#d63148] transition-all shadow-xl hover:-translate-y-1 whitespace-nowrap"
+      >
+        Start Your Own Club
+      </a>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {clubs.map(club => (
+        <div class="group bg-white rounded-[2rem] overflow-hidden border border-slate-100 shadow-md hover:shadow-2xl transition-all hover:-translate-y-2">
+          <div class="aspect-video relative overflow-hidden bg-slate-50">
+            <img 
+              src={club.image} 
+              alt={club.name} 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+            />
+          </div>
+          <div class="p-8">
+            <h2 class="text-2xl font-bold mb-2 group-hover:text-[#ec3750] transition-colors">{club.name}</h2>
+            <div class="flex items-center text-slate-500 text-sm mb-4">
+              <svg class="h-4 w-4 mr-1 text-[#ec3750]" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+              </svg>
+              {club.location}
+            </div>
+            <p class="text-slate-600 mb-8 leading-relaxed">
+              {club.description}
+            </p>
+            <a 
+              href={club.socials} 
+              target="_blank"
+              class="inline-flex items-center font-bold text-[#ec3750] hover:underline"
+            >
+              View Club Details 
+              <svg class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+  </main>
+  <Footer />
+</Layout>

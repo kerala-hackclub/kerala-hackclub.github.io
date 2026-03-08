@@ -1,0 +1,52 @@
+---
+const navLinks = [
+  { name: 'Home', href: '/' },
+  { name: 'Events', href: '/events' },
+  { name: 'Kuttymakers', href: '/kuttymakers' },
+  { name: 'Clubs', href: '/clubs' },
+];
+---
+
+<nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-100">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+      <div class="flex-shrink-0 flex items-center gap-2">
+        <a href="/" class="flex items-center gap-2">
+          <img 
+            src="https://assets.hackclub.com/flag-orpheus-left.svg" 
+            alt="Hack Club Logo" 
+            class="h-10 w-auto hover:rotate-12 transition-transform cursor-pointer"
+          />
+          <span class="font-bold text-xl tracking-tight text-slate-900">
+            Hack Club <span class="text-[#ec3750]">Kerala</span>
+          </span>
+        </a>
+      </div>
+      <div class="hidden sm:flex sm:space-x-8">
+        {navLinks.map(link => (
+          <a
+            href={link.href}
+            class="inline-flex items-center px-1 pt-1 text-sm font-medium text-slate-600 hover:text-[#ec3750] transition-colors"
+          >
+            {link.name}
+          </a>
+        ))}
+        <a 
+          href="https://hackclub.com/slack/" 
+          target="_blank" 
+          class="bg-[#ec3750] text-white px-4 py-2 rounded-full text-sm font-bold hover:bg-[#d63148] transition-all hover:shadow-md active:scale-95"
+        >
+          Join Slack
+        </a>
+      </div>
+      <div class="sm:hidden flex items-center">
+        <!-- Mobile menu button could go here -->
+         <button class="text-slate-600">
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+         </button>
+      </div>
+    </div>
+  </div>
+</nav>

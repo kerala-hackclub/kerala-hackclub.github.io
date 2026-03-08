@@ -1,80 +1,89 @@
 ---
-import "../styles/global.css";
+interface Props {
+	title: string;
+	description?: string;
+}
+
+const { title, description = "The Hack Club community in Kerala. Build, ship, and grow with us." } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta
-      property="og:title"
-      content="Kerala Hack Club - Build for the world, from Kerala"
-    />
-    <meta
-      property="og:description"
-      content="We're building something amazing for the hacker community in Kerala."
-    />
-    <meta
-      property="og:image"
-      content="https://hc-cdn.hel1.your-objectstorage.com/s/v3/b383bbe9814fb27bb536ff038027abd9020a2589_image.png"
-    />
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="theme-color" content="#EC3750" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Kerala Hack Club</title>
-  </head>
-  <body>
-    <slot />
-  </body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title} | Hack Club Kerala</title>
+		<meta name="description" content={description} />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Phantom+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+	</head>
+	<body class="bg-white text-slate-900 font-sans selection:bg-red-200 selection:text-red-900">
+		<slot />
+	</body>
 </html>
 
-<style>
-  @import "tailwindcss";
-  html,
-  body {
-    background-color: #ec3750;
-    margin: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
+<style is:global>
+	@import "tailwindcss";
 
-  /* Importing the Hackclub branding font, if more css, pls add it on top of this comment */
-  @font-face {
-    font-family: "Phantom Sans";
-    src:
-      url("https://assets.hackclub.com/fonts/Phantom_Sans_0.7/Regular.woff")
-        format("woff"),
-      url("https://assets.hackclub.com/fonts/Phantom_Sans_0.7/Regular.woff2")
-        format("woff2");
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-  }
-  @font-face {
-    font-family: "Phantom Sans";
-    src:
-      url("https://assets.hackclub.com/fonts/Phantom_Sans_0.7/Italic.woff")
-        format("woff"),
-      url("https://assets.hackclub.com/fonts/Phantom_Sans_0.7/Italic.woff2")
-        format("woff2");
-    font-weight: normal;
-    font-style: italic;
-    font-display: swap;
-  }
-  @font-face {
-    font-family: "Phantom Sans";
-    src:
-      url("https://assets.hackclub.com/fonts/Phantom_Sans_0.7/Bold.woff")
-        format("woff"),
-      url("https://assets.hackclub.com/fonts/Phantom_Sans_0.7/Bold.woff2")
-        format("woff2");
-    font-weight: bold;
-    font-style: normal;
-    font-display: swap;
-  }
+	@theme {
+		--color-brand-red: #ec3750;
+		--color-brand-orange: #ff8c37;
+		--color-brand-yellow: #f1c40f;
+		--color-brand-green: #33d6a6;
+		--color-brand-cyan: #5bc0de;
+		--color-brand-blue: #338eda;
+		--color-brand-purple: #a633d6;
+	}
+
+	:root {
+		--brand-red: #ec3750;
+		--brand-orange: #ff8c37;
+		--brand-yellow: #f1c40f;
+		--brand-green: #33d6a6;
+		--brand-cyan: #5bc0de;
+		--brand-blue: #338eda;
+		--brand-purple: #a633d6;
+	}
+
+	@font-face {
+		font-family: 'Phantom Sans';
+		src: url('https://assets.hackclub.com/fonts/Phantom-Sans-Regular.woff2') format('woff2');
+		font-weight: normal;
+		font-style: normal;
+		font-display: swap;
+	}
+
+	@font-face {
+		font-family: 'Phantom Sans';
+		src: url('https://assets.hackclub.com/fonts/Phantom-Sans-Bold.woff2') format('woff2');
+		font-weight: bold;
+		font-style: normal;
+		font-display: swap;
+	}
+
+	body {
+		font-family: 'Phantom Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	}
+
+	.text-brand { color: var(--brand-red); }
+	.bg-brand { background-color: var(--brand-red); }
+
+	.btn {
+		@apply inline-flex items-center justify-center px-6 py-3 rounded-full font-bold transition-all duration-200 active:scale-95;
+	}
+
+	.btn-primary {
+		@apply bg-[#ec3750] text-white hover:bg-[#d63148] shadow-lg hover:shadow-xl;
+	}
+
+	.btn-secondary {
+		@apply bg-slate-100 text-slate-800 hover:bg-slate-200;
+	}
+
+    .card {
+        @apply bg-white rounded-3xl p-6 shadow-md hover:shadow-xl transition-shadow border border-slate-100;
+    }
 </style>

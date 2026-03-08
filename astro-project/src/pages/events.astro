@@ -1,0 +1,64 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+const events = [
+  {
+    title: 'Campfire Kerala',
+    description: 'A weekend of building, learning, and community sitting around a digital campfire.',
+    image: 'https://assets.hackclub.com/cards/campfire.png',
+    status: 'Upcoming',
+    color: '#ec3750'
+  },
+  {
+    title: 'Daydream Kerala',
+    description: 'A 24-hour hackathon where your wildest ideas come to life.',
+    image: 'https://assets.hackclub.com/cards/daydream.png',
+    status: 'Completed',
+    color: '#ff8c37'
+  }
+];
+---
+
+<Layout title="Events" description="Upcoming and past events hosted by Hack Club Kerala.">
+  <Navbar />
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+    <div class="mb-16">
+      <h1 class="text-5xl font-bold text-slate-900 mb-6">Events</h1>
+      <p class="text-xl text-slate-600 max-w-2xl">
+        We host regular hackathons, workshops, and meetups for high schoolers across Kerala. 
+        Come build something cool with us!
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+      {events.map(event => (
+        <div class="group bg-white rounded-[2.5rem] overflow-hidden border border-slate-100 shadow-md hover:shadow-2xl transition-all hover:-translate-y-2">
+          <div class="aspect-[16/9] relative overflow-hidden">
+            <img 
+              src={event.image} 
+              alt={event.title} 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+            />
+            <div class="absolute top-6 right-6">
+              <span class={`px-4 py-1 rounded-full text-sm font-bold text-white shadow-lg`} style={`background-color: ${event.color}`}>
+                {event.status}
+              </span>
+            </div>
+          </div>
+          <div class="p-10">
+            <h2 class="text-3xl font-bold mb-4 group-hover:text-[#ec3750] transition-colors">{event.title}</h2>
+            <p class="text-lg text-slate-600 mb-8 leading-relaxed">
+              {event.description}
+            </p>
+            <button class="btn btn-primary bg-slate-100 !text-slate-800 hover:!bg-slate-200 shadow-none">
+              Learn More
+            </button>
+          </div>
+        </div>
+      ))}
+    </div>
+  </main>
+  <Footer />
+</Layout>

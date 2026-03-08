@@ -1,0 +1,66 @@
+---
+const ysws = [
+  {
+    title: 'Boba',
+    description: 'Get $100 for your own boba machine.',
+    image: 'https://assets.hackclub.com/ysws/boba.png',
+    link: 'https://hackclub.com/boba/',
+    color: '#3bcab4'
+  },
+  {
+    title: 'Sprig',
+    description: 'Build your own handheld game console.',
+    image: 'https://assets.hackclub.com/ysws/sprig.png',
+    link: 'https://hackclub.com/sprig/',
+    color: '#ff8c37'
+  },
+  {
+    title: 'Blot',
+    description: 'Build your own plotting machine.',
+    image: 'https://assets.hackclub.com/ysws/blot.png',
+    link: 'https://hackclub.com/blot/',
+    color: '#a633d6'
+  },
+];
+---
+
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+  <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+    <div class="max-w-xl">
+      <h2 class="text-4xl font-bold text-slate-900 mb-4">You Ship, We Ship</h2>
+      <p class="text-lg text-slate-600">
+        Hack Club offers free hardware and funding to high schoolers who build cool things. 
+        Check out these active YSWS programs you can join right now.
+      </p>
+    </div>
+    <a href="https://hackclub.com/ysws/" target="_blank" class="text-[#ec3750] font-bold hover:underline">
+      View All Programs →
+    </a>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    {ysws.map(program => (
+      <a 
+        href={program.link} 
+        target="_blank"
+        class="group relative block bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all hover:-translate-y-2 border border-slate-100"
+      >
+        <div class="aspect-[16/9] overflow-hidden">
+          <img 
+            src={program.image} 
+            alt={program.title} 
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          />
+        </div>
+        <div class="p-6">
+          <h3 class="text-2xl font-bold mb-2 group-hover:text-[#ec3750] transition-colors" style={`color: ${program.color}`}>
+            {program.title}
+          </h3>
+          <p class="text-slate-600">
+            {program.description}
+          </p>
+        </div>
+      </a>
+    ))}
+  </div>
+</section>
